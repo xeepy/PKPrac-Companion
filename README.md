@@ -1,6 +1,6 @@
 # PKPrac-Companion
 
-Control access to PKPrac on your Minecraft server.
+Control who can use PKPrac on your Minecraft server.
 
 ## Development
 
@@ -9,32 +9,32 @@ This plugin is built for **Spigot 1.8.8** using **Maven**.
 ### Setup
 
 1. Clone the repository.
-2. Open the project in your IDE and let Maven resolve dependencies.
-
-See the `#build`, `#run`, and `#debug` sections for more detailed instructions.
+2. Open the project in your IDE and let Maven handle dependencies.
 
 ### Build
 
-Run the Maven `package` task:
+Run the `package` task in Maven:
 
 ```
 Lifecycle > package
 ```
 
-The output `.jar` will be located in:
-`server/plugins/`
+The compiled `.jar` will be in:
+`target/PKPrac-Companion.jar`
+
+Move it to your `server/plugins/` folder to use it.
 
 ## License
 
-This project is licensed under the **GNU GPL v3.0**.
+This project is licensed under the **GNU General Public License v3.0** (GPL-3.0).
 
-If you use any part of this code in your project, **your project must also be open source** and licensed under GPL-3.0. This is a strict copyleft license — if that’s a problem, you can’t use this code.
+If you use any part of this code, **your project must also be GPL-3.0 and open-source**. No exceptions — this is a copyleft license. Don’t use it if you’re not okay with that.
 
-See the [LICENSE](LICENSE) file for full terms.
+See the [LICENSE](LICENSE) file for full details.
 
 ## Contributing
 
-Pull Requests are welcome. For major changes, open an issue to discuss your proposal first.
+Pull Requests are welcome. For significant changes, please open an issue first to discuss your ideas.
 
 ## Credits
 
@@ -42,8 +42,4 @@ Pull Requests are welcome. For major changes, open an issue to discuss your prop
 
 ## Support
 
-Found a bug or have a suggestion? [Open an issue](../../issues).
-
----
-
-Let me know if you want a version with badges or install instructions.
+Issues or suggestions? [Open an issue](../../issues).

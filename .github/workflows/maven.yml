@@ -1,0 +1,64 @@
+
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+name: Build PKPrac Companion
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'pom.xml'
+      - 'server/**'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'pom.xml'
+      - 'server/**'
+  release:
+    types: [published]
+
+jobs:
+  build:
+    if: github.event_name != 'release' # skip on release event
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+      - name: Upload pom.xml as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pom-xml
+          path: pom.xml
+      - name: Upload plugin jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: pkprac-companion
+          path: target/*.jar
+
+  release:
+    if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+      - name: Upload to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        with:
+          files: target/*.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

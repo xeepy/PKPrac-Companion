@@ -1,0 +1,17 @@
+name: PKPracCompanion
+version: 1.0.0
+description: Control who can use PKPrac on your server.
+author: xeepy
+main: studio.xekek.pkpraccompanion.impl.PKPracServerImpl
+api-version: 1.8.8
+
+commands:
+    pkprac:
+        description: Main command for PKPrac server management
+        usage: /<command> <givewand|removenear|list|toggleworld|enable|disable>
+        aliases: [pkp]
+
+permissions:
+    pkprac.admin:
+        description: Permission to use admin commands
+        default: op

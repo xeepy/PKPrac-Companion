@@ -1,0 +1,7 @@
+# List of worlds where practice is not allowed.
+# Add world names here to mark them as non-practice worlds.
+nonPracticeWorlds: []
+
+# List of players (by UUID) who have the "NoPractice" tag enabled.
+# Add player UUIDs here to enable the tag for them.
+noPracticePlayers: []

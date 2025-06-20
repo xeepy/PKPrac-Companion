@@ -1,6 +1,8 @@
+
 ###############################
 # Build output
 ###############################
+dependency-reduced-pom.xml
 target/
 build/
 !**/src/main/**/target/

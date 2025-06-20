@@ -2,6 +2,13 @@
 
 Control who can use PKPrac on your Minecraft server.
 
+## Releases
+
+1. [Download the latest release](https://github.com/xeepy/PKPrac-Companion/releases)
+2. Place the `.jar` file in your server's `plugins` folder.
+3. Restart your server.
+
+
 ## Development
 
 This plugin is built for **Spigot 1.8.8** using **Maven**.

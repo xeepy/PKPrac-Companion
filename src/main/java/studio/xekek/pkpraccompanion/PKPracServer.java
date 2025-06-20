@@ -87,7 +87,7 @@ public abstract class PKPracServer extends JavaPlugin implements Listener {
                         marker.setGravity(false);
                         marker.setMarker(true);
                         marker.setCustomName("NoPractice");
-                        marker.setCustomNameVisible(true);
+                        marker.setCustomNameVisible(false);
 
                         player.sendMessage("NoPractice marker placed successfully!");
 
@@ -141,7 +141,7 @@ public abstract class PKPracServer extends JavaPlugin implements Listener {
             ArmorStand floatingEntity = player.getWorld().spawn(spawnLocation, ArmorStand.class);
             floatingEntity.setVisible(false);
             floatingEntity.setCustomName("NoPractice[" + player.getUniqueId() + "]");
-            floatingEntity.setCustomNameVisible(true);
+            floatingEntity.setCustomNameVisible(false);
             floatingEntity.setGravity(false);
             floatingEntity.setMarker(true);
 
